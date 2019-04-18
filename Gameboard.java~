@@ -1,0 +1,19 @@
+class Gameboard {
+  
+  public char[][] board;
+  
+  public Gameboard(boolean setup) {
+    // create an empty gameboard
+    if (!setup) {
+      for (int x = 0; x < 8; x++) {
+        for (int y = 0; y < 8; y++) {
+          board[x][y] = '-';
+        }
+      }
+    } 
+    // set up a gameboard with red and white pieces in the correct starting places
+    else {
+      for 
+    }
+  }
+}
