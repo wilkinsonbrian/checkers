@@ -137,6 +137,7 @@ class Gameboard {
   boolean jump(int x, int y) {
     boolean isRed = board[x][y] == 'r';
     boolean isWhite = board[x][y] == 'w';
+    boolean jumped = false;
     int nextX;
     int nextY;
     if (isWhite) {
@@ -147,7 +148,8 @@ class Gameboard {
         board[x][y] = '-';
         board[x-1][y-1] = '-';
         board[nextX][nextY] = 'w';
-        return jump(nextX, nextY);
+        jumped = true;
+        jump(nextX, nextY);
       }
       //Jumping up and to the right
       nextX = x - 2;
@@ -156,7 +158,8 @@ class Gameboard {
         board[x][y] = '-';
         board[x-1][y+1] = '-';
         board[nextX][nextY] = 'w';
-        return jump(nextX, nextY);
+        jumped = true;
+        jump(nextX, nextY);
       }
       
       
@@ -171,7 +174,8 @@ class Gameboard {
         board[x][y] = '-';
         board[x+1][y+1] = '-';
         board[nextX][nextY] = 'r';
-        return jump(nextX, nextY);
+        jumped = true;
+        jump(nextX, nextY);
       }
       
       // Testing jumping right (down and to the left for red)
@@ -181,11 +185,12 @@ class Gameboard {
         board[x][y] = '-';
         board[x+1][y-1] = '-';
         board[nextX][nextY] = 'r';
-        return jump(nextX, nextY);
+        jumped = true;
+        jump(nextX, nextY);
       }
     }
     
-    return false;
+    return jumped;
   }
   
   boolean kingMe(int x, int y) {
