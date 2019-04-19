@@ -6,7 +6,7 @@ public class Student_Runner_Gameboard {
 
         Gameboard filled = new Gameboard(true);
         System.out.println("Printing game-ready gameboard:\n" + filled + "\n");
-/*
+
         System.out.println("Testing move method for both colors:");
         System.out.println("Testing move left:");
         filled.move(5,2,true);
@@ -38,6 +38,6 @@ public class Student_Runner_Gameboard {
         c.board[7][2] = 'r'; c.board[0][5] = 'w';
         c.kingMe(7,2); c.kingMe(0,5);
         System.out.println(c.toString());
-        */
+        
     }
 }
